@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="stock_report_card_wizard_form" model="ir.ui.view">
+        <field name="name">stock.report.card.wizard.form</field>
+        <field name="model">stock.report.card.wizard</field>
+        <field name="arch" type="xml">
+            <form string="create appointment">
+                <group string="Configuration">
+                    <group>
+                        <field name="start_date" string="Start Date"/>
+                    </group>
+                    <group>
+                        <field name="end_date" string="End Date"/>
+                    </group>
+                    <seperator/>
+                    <group>
+                        <field name="negative_stock" string="Negative Stock Display highlight"/>
+                    </group>
+                    <group>
+                        <field name="stock_valuation" string="Show Stock Valuation"/>
+                    </group>
+                    <group>
+                        <field name="zero_stock" string="Skip Zero Stock"/>
+                    </group>
+                </group>
+                <separator/>
+                <group string="Company">
+                    <field name="company_id" string="Company"/>
+                </group>
+                <separator/>
+                <group string="Warehouse">
+                    <field name="warehouse_id" string="Warehouse" domain="[('company_id','=',company_id)]"/>
+                </group>
+                <separator></separator>
+                <group string="Locations">
+                    <field name="location_ids" string="Locations" widget="many2many_tags"
+                           domain="[('company_id','=',company_id),('location_id','=',warehouse_id)]"/>
+                </group>
+                <separator></separator>
+                <group string="Products">
+                        <field name="product_ids" nolabel="1" style="width:100%" widget="one2many_list"
+                        domain="[('property_stock_inventory','in',location_ids)]"/>
+                </group>
+                <footer>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    <button string="Confirm" name="export_to_excel" type="object" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_report_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Card Report</field>
+        <field name="res_model">stock.report.card.wizard</field>
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <menuitem id="menu_stock_card_report"
+              name="Stock Card Report"
+              parent="stock.menu_warehouse_report"
+              action="action_stock_report_wizard"
+              sequence="1000"/>
+</odoo>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Card Report Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .features {
+            margin: 20px 0;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .features li:before {
+            content: "✔";
+            color: #0056b3;
+            position: absolute;
+            left: 0;
+        }
+        .screenshot {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .screenshot img {
+            width: 260px; /* Fixed width */
+            height: 200px; /* Fixed height */
+            border: 1px solid #ddd;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Stock Card Report Module for Odoo</h1>
+    <p>Generate detailed stock card reports with ease using the Stock Card Report module. This module allows you to
+        filter and generate inventory reports across multiple companies, warehouses, locations, and more. Perfect for
+        detailed stock management and inventory tracking.</p>
+
+    <h2>Key Features:</h2>
+    <div class="features">
+        <ul>
+            <li>Get the output in an Excel file listing products or that quantity.</li>
+            <li>Multi Company: Specific Company Wise Inventory Report.</li>
+            <li>Option to filter by Warehouse (One at a time).</li>
+            <li>Option to filter by Location.</li>
+            <li>Option to filter by Product.</li>
+            <li>Option for Inventory Valuation.</li>
+            <li>Get Opening, Incoming, Outgoing, Internal, Adjustment and Closing for given date range.</li>
+            <li>Get stock valuation report on date.</li>
+            <li>Generate Stock Inventory Real Time Report in Excel by specific dates.</li>
+            <li>Highlight negative stock record in red color (if selected).</li>
+            <li>With and Without Zero quantity stock.</li>
+        </ul>
+    </div>
+
+    <h2>Screenshots:</h2>
+    <br/><br/>
+    <div class="screenshot">
+        <h3>Report Menu</h3>
+        <img src="/stock_card_report/static/description/images/report_menu.png" alt="Stock Card Report Menu">
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="screenshot">
+        <h3>Filter Options</h3>
+        <img src="/stock_card_report/static/description/images/filter_options2.png" alt="Filter Options">
+        <br/><br/>
+        <img src="/stock_card_report/static/description/images/filter_options1.png" alt="Filter Options">
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="screenshot">
+        <h3>Excel Report Example</h3>
+        <img src="/stock_card_report/static/description/images/excel_report.png" alt="Excel Report Example">
+    </div>
+</div>
+</body>
+</html>
